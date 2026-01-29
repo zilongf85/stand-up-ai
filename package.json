@@ -1,8 +1,9 @@
 {
-  "name": "standup.ai---脱口秀智能体",
+  "name": "stand-up-ai",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "engines": { "node": ">=18" },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

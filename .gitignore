@@ -1,3 +1,16 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+dist-ssr
+*.local
+
+# Env / secrets（勿提交 API Key、憑證等）
+.env
+.env.*
+!.env.example
+
 # Logs
 logs
 *.log
@@ -7,18 +20,35 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Cache & temp
+.cache
+.vite
+.turbo
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
 
-# Editor directories and files
+# Test / coverage
+coverage
+.nyc_output
+*.lcov
+
+# Editor / IDE
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
+*.sublime-*
+
+# OS
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Optional: 若用 Vercel/Netlify 等，取消註解
+# .vercel
+# .netlify

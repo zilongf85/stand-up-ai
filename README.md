@@ -52,9 +52,10 @@ npm install
 
 **首次使用前請先設定 GitHub Pages：**
 
-1.  repo **Settings** → **Pages**
-2. **Build and deployment** → **Source** 選 **GitHub Actions**。
-3. 推送 `main` 或手動跑完 workflow 後，站點網址為：
+1. Repo **Settings** → **Pages**
+2. **Build and deployment** → **Source** 選 **Deploy from a branch**
+3. **Branch** 選 `gh-pages` / `/(root)`，Save
+4. 推送 `main` 或手動跑完 workflow 後，Actions 會把 `dist` 推到 `gh-pages`，站點網址為：
 
    ```
    https://<username>.github.io/<repo-name>/

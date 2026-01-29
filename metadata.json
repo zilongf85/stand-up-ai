@@ -1,0 +1,5 @@
+{
+  "name": "StandUp.ai - 脱口秀智能体",
+  "description": "一个智能脱口秀创作助手，能根据你的主题和知识库模仿特定演员风格创作段子。",
+  "requestFramePermissions": []
+}

@@ -28,7 +28,7 @@ npm install
 
 ## 2. 本地運行
 
-1. 在專案根目錄建立 `.env.local`，設定 Gemini API Key（可複製 `.env.example` 再填入）：
+1. 在專案根目錄建立 **`.env.local`**（可複製 `.env.example` 再填入），設定 Gemini API Key：
 
    ```
    GEMINI_API_KEY=your_key_here
@@ -41,6 +41,12 @@ npm install
    ```
 
 3. 開啟 http://localhost:3000。生成段子與 TTS 會使用上述 API Key（僅在瀏覽器端使用，不發送到專案後端）。
+
+**若出現「未配置 API Key」或請求失敗，請依下列檢查：**
+
+- **檔案**：專案根目錄的 **`.env.local`**（檔名必須一致，注意前綴的點）。
+- **格式**：`GEMINI_API_KEY=你的key`，等號後直接貼 key，不要加引號、前後不要空格。
+- **生效時機**：修改 `.env.local` 後，**必須重新執行 `npm run dev`**，再試生成。
 
 ---
 

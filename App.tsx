@@ -22,15 +22,25 @@ export default function App() {
 
   const handleGenerate = async () => {
     if (!topic) return;
-    
+
+    if (!process.env.API_KEY) {
+      setGeneratedText(
+        '未配置 API Key。請在專案根目錄建立 .env.local，填入 GEMINI_API_KEY=你的key，儲存後重新執行 npm run dev。請確認 .env.local 路徑與格式正確，並已重啟 npm run dev。'
+      );
+      if (import.meta.env.DEV) console.log('API Key 未配置');
+      return;
+    }
+
     setIsGenerating(true);
     setGeneratedText('');
     setGeneratedAudio(undefined);
     setSources([]);
 
+    if (import.meta.env.DEV) console.log('API Key 已配置');
+
     try {
       const profile = PRESET_COMEDIANS.find(p => p.id === selectedProfileId)!;
-      
+
       // 1. Generate Text
       const result = await generateComedyRoutine(
         topic, 
@@ -53,7 +63,9 @@ export default function App() {
 
     } catch (error) {
       console.error(error);
-      setGeneratedText("出错了。AI 也有怯场的时候。请检查你的 API Key。");
+      setGeneratedText(
+        '請求失敗，請檢查 API Key 是否正確、是否有額度，以及網路連線。'
+      );
     } finally {
       setIsGenerating(false);
     }

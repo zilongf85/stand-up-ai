@@ -48,14 +48,13 @@ npm install
 
 - 工作流程：`.github/workflows/deploy.yml`
 - 觸發：推送到 `main` 或手動執行 `workflow_dispatch`。
-- 步驟：`npm ci` → `npm run build` → 上傳 `dist/` → 部署到 GitHub Pages。
+- 步驟：`npm install` → `npm run build` → 上傳 `dist/` → 部署到 GitHub Pages。
 
-**首次使用前請先設定 GitHub Pages：**
+**首次使用前請先設定 GitHub Pages（必做，否則 404）：**
 
 1. Repo **Settings** → **Pages**
-2. **Build and deployment** → **Source** 選 **Deploy from a branch**
-3. **Branch** 選 `gh-pages` / `/(root)`，Save
-4. 推送 `main` 或手動跑完 workflow 後，Actions 會把 `dist` 推到 `gh-pages`，站點網址為：
+2. **Build and deployment** → **Source** 選 **GitHub Actions**（不要選 Deploy from a branch）
+3. 存檔後，推送 `main` 或手動跑 workflow；部署完成後站點網址為：
 
    ```
    https://<username>.github.io/<repo-name>/
